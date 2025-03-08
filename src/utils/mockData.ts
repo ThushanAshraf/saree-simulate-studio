@@ -1,4 +1,3 @@
-
 import { faker } from '@faker-js/faker/locale/en_IN';
 
 export type ProductCategory = 
@@ -143,8 +142,10 @@ const generateDescription = (name: string, material: ProductMaterial, category: 
 
 // Generate unique descriptive tags
 const generateTags = (category: ProductCategory, material: ProductMaterial, colors: ProductColor[], occasion: ProductOccasion[]): string[] => {
-  const tags = [category, material, ...colors, ...occasion];
+  // Start with an array of properly typed values
+  const tags: string[] = [category, material, ...colors, ...occasion];
   
+  // Add custom tag strings that are clearly marked as string type
   const additionalTags = [
     'Traditional', 'Handloom', 'Handcrafted', 'Authentic', 'Ethnic Wear',
     'Indian Heritage', 'Sustainable Fashion', 'Artisan Made', 'Luxury', 'Premium'
